@@ -1,8 +1,9 @@
-name: build_and_start_uinit_tests
+
+name: build_and_start_integration_tests
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "staging" ]
 
 jobs:
   build:
@@ -20,4 +21,4 @@ jobs:
     - name: Build The Application
       run: dotnet build --no-restore
     - name: Test
-      run: dotnet test Homies.UnitTests/Homies.UnitTests.csproj --no-build --verbosity normal
+      run: dotnet test Homes.IntegrationTests/Homes.IntegrationTests.csproj --no-build --verbosity normal
